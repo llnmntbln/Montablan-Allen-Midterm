@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeMontablan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="icon" type="x-icon"
+        href="https://raw.githubusercontent.com/llnmntbln/pics/main/ProfilePictureMaker%20(3).png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    :root {
+        --first-color: rgb(20 20 20);
+        --second-color: #1fb9b0;
+        --third-color: rgb(135 135 135);
+        --hover-color: #1fb9b0;
+        --body-bg-color: #e9e9e9;
+        --card-bg-color: #f00;
+        --bar-color: #d1d1d1;
+        --title-shadow-color: #000;
+        --education-section-color: rgb(177, 177, 177);
+        --footer-bg-color: rgb(51 56 59);
+        --bg-transparent-color: rgb(209 209 209 / 3%);
+        --transparent-color-01: rgba(0, 0, 0, 0.1);
+        --button-color: rgb(88, 88, 88);
+        --line-color: #1fb9b0;
+        --color-filter: invert(1);
+        --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+        --small-font-size: 0.9em;
+        --normal-font-size: 1em;
+        --scroll-down-color: #fff;
+        --scroll-up-color: #fff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    element.style {
+        border-right: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        color: var(--first-color);
+        background: var(--body-bg-color);
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 2rem 0 0 0;
+        transition: 3s ease;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--first-color);
+    }
+
+    li {
+        list-style: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        background: rgb(138, 136, 136);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(206, 206, 206);
+        border-radius: 2em;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1fb9b0;
+    }
+
+    header {
+        z-index: 99999;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(20px);
+        transition: .6s ease;
+    }
+
+    header.sticky {
+        background: rgba(218, 217, 217, 0.363);
+        box-shadow: 1px;
+    }
+
+    .nav-bar {
+        position: relative;
+        height: calc(4rem + 1rem);
+        max-width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+        transition: 1s ease;
+    }
+
+    header.sticky .nav-bar {
+        height: calc(2.5rem + 1rem);
+    }
+
+    .nav-bar .logo {
+        color: var(--first-color);
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+
+    .nav-items a {
+        color: var(--first-color);
+        font-size: var(--normal-font-size);
+        font-weight: 500;
+    }
+
+    .nav-items a:not(last-child) {
+        margin-right: 50px;
+    }
+
+    .nav-items a:hover {
+        color: var(--second-color);
+    }
+
+    .nav-menu-btn {
+        display: none;
+    }
+
+    .home {
+        position: relative;
+        max-width: 1250px;
+        min-height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 4rem 2rem;
+        flex-direction: column;
+    }
+
+    .home .home-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 105%;
+    }
+
+    .home-container .media-icons {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40px;
+    }
+
+    .home-container .media-icons a {
+        color: var(--first-color);
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .home-container .media-icons a:hover {
+        color: var(--hover-color);
+    }
+
+    .home-container .info h2 {
+        font-size: 4em;
+        font-weight: 600;
+        line-height: 70px;
+    }
+
+    .home-container .info h3 {
+        color: var(--line-color);
+        font-size: 1.3em;
+        font-weight: 600;
+        line-height: 40px;
+    }
+
+    .home-container .info p {
+        color: var(--third-color);
+        font-size: var(--normal-font-size);
+        max-width: 350px;
+    }
+
+    .btn {
+        background: var(--button-color);
+        color: var(--scroll-down-color);
+        font-size: 1em;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 25px;
+        padding: 20px 30px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+
+    .btn:hover {
+        background: var(--hover-color);
+    }
+
+    .home-container .home-img {
+        position: relative;
+    }
+
+    .home-container .home-img img {
+        width: 100%;
+        margin-top: -15%;
+        transform: translate(0, 0);
+    }
+
+    .home .scroll-down {
+        color: var(--third-color);
+        font-size: 1em;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+
+    .home .scroll-down i {
+        color: var(--third-color);
+        font-size: 1.2em;
+        animation: arrow-down ease 1.2s infinite;
+    }
+
+    @keyframes arrow-down {
+        0% {
+            transform: translateY(0);
+        }
+
+        30% {
+            transform: translateY(10px);
+        }
+    }
+
+    .section {
+        position: relative;
+        max-width: 1150px;
+        margin: auto;
+        padding: 0rem 2rem 5rem;
+        overflow: hidden;
+    }
+
+    section#skills.skills.section {
+        margin-top: 8vh;
+        text-align: center;
+        display: inline;
+    }
+
+    .section .about {
+        align-items: center;
+    }
+
+    .sub-section {
+        position: relative;
+        max-width: 1150px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 6rem 0;
+    }
+
+    .section-title-01 {
+        font-size: 4.5em;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to top, transparent 0%, var(--title-shadow-color) 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: .1;
+    }
+
+    .section-title-02 {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: var(--first-color);
+        transform: translateY(-80px);
+    }
+
+    .section-title1 {
+        font-size: 4.5em;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to top, transparent 0%, var(--title-shadow-color) 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: .1;
+        text-align: center;
+    }
+
+    .section-titl1 {
+        font-size: 4.5em;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to top, transparent 0%, var(--title-shadow-color) 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: .1;
+        text-align: center;
+    }
+
+    .section-title_1 {
+        font-size: 4.5em;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to top, transparent 0%, var(--title-shadow-color) 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: .1;
+        text-align: center;
+    }
+
+    .section-titl2 {
+        font-size: 2.5em;
+        color: var(--first-color);
+        font-weight: 700;
+        transform: translateY(-80px);
+    }
+
+    .section-title_2 {
+        font-size: 2.5em;
+        color: var(--first-color);
+        font-weight: 700;
+        transform: translateY(-80px);
+    }
+
+    .section-title2 {
+        font-size: 2.5em;
+        color: var(--first-color);
+        font-weight: 700;
+        transform: translateY(-80px);
+        text-align: center;
+    }
+
+    .container {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .about .container .content {
+        column-gap: 40px;
+        width: 100%;
+    }
+
+    .about-img {
+        position: relative;
+    }
+
+    .about-img img {
+        max-width: 100%;
+        min-width: 500px;
+    }
+
+    .about-info .description {
+        max-width: 600px;
+    }
+
+    .about-info .description h3 {
+        font-size: 2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .about-info .description h4 {
+        font-size: 1.3em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .about-info .description h4 span {
+        color: var(--line-color);
+        font-weight: 600;
+    }
+
+    .about-info .description p {
+        color: var(--first-color);
+        font-size: 1em;
+        margin-bottom: 15px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid var(--line-color);
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 3em;
+        font-weight: 900;
+        color: var(--scroll-down-color);
+    }
+
+    .education-section {
+        background: var(--education-section-color);
+        padding: 75px 0;
+    }
+
+    .container .university-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        color: var(--first-color);
+    }
+
+    .container .university-container img {
+        width: 65%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container .university-container .university {
+        width: 400px;
+        margin: 0 5px;
+        text-align: center;
+        transition: 0.4s ease-in-out;
+    }
+
+    .container .university-container .university:hover {
+        transform: translateY(-20px);
+    }
+
+    .container .university-container .university .univ-logo {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .container .university-container .university .univ-title {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .education {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 30vh;
+    }
+
+    .hard-skills,
+    .soft-skills {
+        text-align: center;
+        margin-bottom: 10vh;
+    }
+
+    .skills .container .content {
+        width: 100%;
+    }
+
+    .education h3 label {
+        color: var(--third-color);
+        font-size: 2em;
+        font-weight: 600;
+        padding: 15px 5px;
+        border-radius: 5px;
+        font-family: cursive;
+    }
+
+    .education span {
+        color: var(--first-color);
+        font-weight: 600;
+    }
+
+    /* .box li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 25px;
+        height: 25px;
+        background: lightseagreen;
+        animation: animate 20s linear infinite;
+        bottom: -150px;
+        border-radius: 50%;
+    }
+
+    .box li:nth-child(1) {
+        left: 86%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+    .box li:nth-child(2) {
+        left: 12%;
+        width: 30px;
+        height: 30px;
+        animation-delay: 0s;
+        animation-duration: 10s;
+    }
+
+    .box li:nth-child(3) {
+        left: 70%;
+        width: 100px;
+        height: 100px;
+        animation-delay: 0s;
+    }
+
+    .box li:nth-child(4) {
+        left: 45%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 15s;
+    }
+
+    .box li:nth-child(5) {
+        left: 65%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 0s;
+    }
+
+    .box li:nth-child(6) {
+        left: 15%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 0s;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(0) scale(0);
+        }
+
+        100% {
+            transform: translateY(-800px) scale(2);
+            opacity: 0;
+        }
+    } */
+    .bar {
+        background: var(--bar-color);
+        margin-top: 3%;
+        padding: 4%;
+        width: 555px;
+        border-radius: 6px;
+        transition: .5s ease;
+    }
+
+    .bar:hover {
+        transform: translateY(-8px);
+    }
+
+    .bar .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+        font-size: .8em;
+    }
+
+    .bars .bar .line {
+        position: relative;
+        width: 100%;
+        height: 10px;
+        background: var(--scroll-down-color);
+        border-radius: 2px;
+    }
+
+    .bars .line:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: var(--line-color);
+        border-radius: 2px;
+    }
+
+    .bar .graphic:before {
+        width: 80%;
+    }
+
+    .bar .database:before {
+        width: 70%;
+    }
+
+    .bar .foreign:before {
+        width: 95%;
+    }
+
+    .bar .video:before {
+        width: 75%;
+    }
+
+    .bar .machine:before {
+        width: 90%;
+    }
+
+    .bar .adaptability:before {
+        width: 85%;
+    }
+
+    .bar .communication:before {
+        width: 70%;
+    }
+
+    .bar .optimism:before {
+        width: 90%;
+    }
+
+    .bar .leadership:before {
+        width: 70%;
+    }
+
+    .bar .time:before {
+        width: 80%;
+    }
+
+    .scrollToTop-btn {
+        z-index: 99999;
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+        background: var(--third-color);
+        color: var(--scroll-up-color);
+        font-size: .9em;
+        border-radius: 3px;
+        cursor: pointer;
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    .scrollToTop-btn.active {
+        right: 20px;
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .hobbies .container .content {
+        width: 100%;
+    }
+
+    section#hobbies.hobbies.section {
+        margin-top: -18vh;
+    }
+
+    .hobbies-list {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 35px;
+        margin: 0 auto;
+    }
+
+    .hobbies-list .img-card {
+        position: relative;
+        max-width: 100%;
+        height: 360px;
+        border-radius: 10px;
+        box-shadow: var(--third-color);
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .hobbies-list .img-card .overlay {
+        transition: 1s ease;
+    }
+
+    .hobbies-list .img-card:hover .overlay {
+        z-index: 777;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-transparent-color);
+    }
+
+    .hobbies-list .img-card .info {
+        z-index: 777;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 20px;
+        color: var(--scroll-down-color);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    .hobbies-list .img-card:hover .info {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .hobbies-list .img-card .info h3 {
+        font-size: 1.5em;
+    }
+
+    .hobbies-list .img-card .info span {
+        font-size: 1.2em;
+    }
+
+    .hobbies-list .img-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hobbies-model {
+        z-index: 999999;
+        position: fixed;
+        width: 100%;
+        height: 105vh;
+        top: 0;
+        left: 0;
+        background: var(--bg-transparent-color);
+        backdrop-filter: blur(20px);
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    .hobbies-model.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .hobbies-model-body {
+        position: relative;
+        background: var(--body-bg-color);
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        border-radius: 10px;
+        transform: translateY(-50px);
+        transition: .5s ease;
+    }
+
+    .hobbies-model.active .hobbies-model-body {
+        transform: translateY(0);
+    }
+
+    .hobbies-close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    .hobbies-model-body h3 {
+        font-size: 1.5em;
+        color: var(--first-color);
+    }
+
+    .hobbies-model-body p {
+        color: var(--first-color);
+    }
+
+    .hobbies-model-body img {
+        width: 100%;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+
+    .footer-distributed {
+        background: var(--footer-bg-color);
+        box-shadow: 0 1px 1px 0 rgb(0 0 0 / 12%);
+        width: 100%;
+        margin-top: 3vh;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 75px 30px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .footer-distributed .footer-left {
+        width: 40%;
+    }
+
+    .footer-distributed h3 {
+        color: var(--scroll-down-color);
+        font-size: 2em;
+        margin: 0;
+    }
+
+    .footer-distributed h3 span {
+        color: var(--line-color);
+    }
+
+
+    .footer-distributed .footer-links {
+        color: var(--scroll-down-color);
+        margin: 20px 0 12px;
+        padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        font-weight: 400;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+        color: var(--line-color);
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center {
+        width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+        background-color: var(--footer-bg-color);
+        color: var(--line-color);
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+        display: inline-block;
+        color: var(--scroll-down-color);
+        font-weight: 400;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+        color: var(--line-color);
+        text-decoration: none;
+        ;
+    }
+
+    .footer-distributed .footer-links a:before {
+        content: "|";
+        font-weight: 300;
+        font-size: 20px;
+        left: 0;
+        color: var(--scroll-down-color);
+        display: inline-block;
+        padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+        content: none;
+    }
+
+
+    .footer-distributed .footer-right {
+        width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+        line-height: 20px;
+        color: var(--third-color);
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+        display: block;
+        color: var(--scroll-down-color);
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color: var(--footer-bg-color);
+        border-radius: 2px;
+        font-size: 20px;
+        color: #1fb9b0;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+
+    .theme-btn {
+        z-index: 999999;
+        position: fixed;
+        right: 0;
+        top: 100px;
+        background: var(--third-color);
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+        border-radius: 5px 0 0 5px;
+        cursor: pointer;
+        color: var(--scroll-up-color);
+    }
+
+    .theme-btn .fa-sun,
+    .theme-btn.sun .fa-moon {
+        display: none;
+    }
+
+    .theme-btn.sun .fa-sun {
+        display: block;
+    }
+
+    .dark-theme {
+        --first-color: rgb(241, 241, 241);
+        --second-color: #1fb9b0;
+        --third-color: rgb(224, 222, 222);
+        --hover-color: #1fb9b0;
+        --body-bg-color: #242323;
+        --card-bg-color: #f00;
+        --education-section-color: rgb(112, 114, 116);
+        --bar-color: #343434;
+        --footer-bg-color: rgb(112, 114, 116);
+        --bg-transparent-color: rgba(0, 0, 0, 0.1);
+        --transparent-color-01: rgba(0, 0, 0, 0.1);
+        --transparent-color-02: rgba(106, 89, 209, 0.1);
+        --line-color: #1fb9b0;
+        --title-shadow-color: rgb(226, 226, 226);
+        --button-color: rgb(146, 146, 146);
+        --color-filter: invert(0);
+        --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+        --small-font-size: 0.9em;
+        --normal-font-size: 1em;
+        --scroll-bar-color: rgb(59, 59, 59);
+        --scroll-thumb-color: rgb(163, 163, 163);
+        --scroll-thumb-hover-color: rgb(19, 19, 19);
+        --scroll-down-color: #fff;
+        --scroll-up-color: rgb(75, 75, 75);
+    }
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 1070px) {
+
+        .navigation {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-transparent-color);
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s ease;
+        }
+
+        .navigation.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .nav-items {
+            position: relative;
+            background: rgb(160, 160, 160);
+            width: 600px;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            transform: translateY(-50px);
+            transition: .3s ease;
+        }
+
+        .navigation.active .nav-items {
+            transform: translateY(0);
+        }
+
+        .nav-items a {
+            margin: 15px 50px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .nav-close-btn {
+            position: absolute;
+            background: url(https://raw.githubusercontent.com/llnmntbln/pics/main/close.png)no-repeat;
+            background-size: 12px;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            top: 0;
+            right: 0;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .nav-menu-btn {
+            background: url(https://raw.githubusercontent.com/llnmntbln/pics/main/menu.png)no-repeat;
+            filter: var(--color-filter);
+            background-size: 30px;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .home .home-container .info {
+            font-size: 0.85rem;
+        }
+
+        .about .container .content {
+            display: grid;
+            width: 100%;
+            row-gap: 20px;
+        }
+
+        .about-img img {
+            min-width: 0;
+            width: 100%;
+        }
+
+        .footer-distributed {
+            font: bold 14px sans-serif;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-distributed .footer-center i {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 730px) {
+
+        body {
+            margin: 5rem 0 0 0;
+        }
+
+        .university-container .university a {
+            font-size: .8em;
+        }
+
+        .section-titl1,
+        .section-title-01,
+        .section-title1,
+        .section-title_1 {
+            font-size: 2.9em;
+        }
+
+        .section-titl2,
+        .section-title-02,
+        .section-title2,
+        .section-title_2 {
+            font-size: 2em;
+            transform: translateY(-65px);
+        }
+
+        .home .home-container {
+            display: grid;
+        }
+
+        .home-container .home-img {
+            position: absolute;
+        }
+
+        .home-container .home-img img {
+            width: 65%;
+            transform: translate(80px, -180px);
+        }
+
+        section#hobbies.hobbies.section {
+            margin-top: -4vh;
+        }
+
+        .home .home-container .info {
+            font-size: .8rem;
+        }
+
+        .media-icons {
+            margin-bottom: 80px;
+        }
+
+        .education {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bar {
+            margin-top: 3%;
+            padding: 3%;
+            width: 100%;
+        }
+
+        .hobbies-model-body {
+            width: 300px;
+        }
+    }
+</style>
+
+<body>
+    <div class="scrollToTop-btn flex-center">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <div class="theme-btn flex-center">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <header>
+        <div class="nav-bar">
+            <a href="#footer" class="logo">Allen</a>
+            <div class="navigation">
+                <div class="nav-items">
+                    <div class="nav-close-btn"></div>
+                    <a class="active" href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#hobbies">Hobbies</a>
+                </div>
+            </div>
+            <div class="nav-menu-btn"></div>
+        </div>
+    </header>
+    <section class="home flex-center" id="home">
+        <div class="home-container">
+            <div class="media-icons">
+                <a href="https://www.facebook.com/allen.montablan.1" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/llnmntbln" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/llnmntbln/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="info">
+                <h2>Hi, I am Allen</h2>
+                <h3>An aspiring Front-End Developer</h3>
+                <p>Greetings! Thank you for dropping by my website. Let me share something about myself.</p>
+                <a href="#footer" class="btn">Contact Me <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            <div class="home-img">
+                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/_(500%20%C3%97%20500px)%20(2).png"
+                    alt="">
+            </div>
+            <!-- <div class="objects">
+                <ul class="box">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div> -->
+        </div>
+        <a href="#about" class="scroll-down">Click Here <i class="fas fa-arrow-down"></i></a>
+    </section>
+    <section class="about section" id="about">
+        <div class="container flex-center">
+            <h1 class="section-title-01">My Profile</h1>
+            <h2 class="section-title-02">My Profile</h2>
+            <div class="content flex-center">
+                <div class="about-img">
+                    <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/_(500%20%C3%97%20500px)%20(4).png"
+                        alt="">
+                </div>
+                <div class="about-info">
+                    <div class="description">
+                        <h3>I'm Allen M. Montablan</h3>
+                        <h4>A <span>student</span> in <span>Polytechnic University of the Philippines</span> Sto.Tomas
+                            Branch</h4>
+                        <p>I'm 21 years old, and I presently residing in San Vicente, Sto. Tomas, Batangas. I am now
+                            pursuing a bachelor's degree in information technology in Polytechnic University of the
+                            Philippines—Sto.Tomas Branch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="education-section" id="education">
+        <div class="container flex-center">
+            <h1 class="section-title1">Education</h1>
+            <h2 class="section-title2">Education</h2>
+            <div class="university-container">
+                <div class="university">
+                    <img
+                        src="https://raw.githubusercontent.com/llnmntbln/pics/main/201436978-1852878758226512-7365972522302767185-n.png">
+                    <div class="univ-title"><a href="https://www.facebook.com/MotherBarbaraMicarelliSchoolOfficialPage"
+                            target="_blank">Mother Barbara Micarelli School</a></div>
+                    <div class="school-year">Elementary (2008 - 2014)</div>
+                </div>
+                <div class="university">
+                    <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/sta_old.png">
+                    <div class="univ-title"><a href="https://www.facebook.com/STA1919" target="_blank">St.Thomas
+                            Academy</a></div>
+                    <div class="school-year">JHS (2014 - 2018)</div>
+                </div>
+                <div class="university">
+                    <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/sta_new.png">
+                    <div class="univ-title"><a href="https://www.facebook.com/STA1919" target="_blank">St.Thomas
+                            Academy</a></div>
+                    <div class="school-year">SHS (2018 - 2020)</div>
+                </div>
+                <div class="university">
+                    <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/pup.png">
+                    <div class="univ-title"><a href="https://www.facebook.com/PUPStoTomasBranch"
+                            target="_blank">Polytechnic University of the Philippines</a></div>
+                    <div class="school-year">College (2020 - present)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills section" id="skills">
+        <div class="container flex-center">
+            <h1 class="section-title_1">Skills</h1>
+            <h2 class="section-title_2">Skills</h2>
+        </div>
+        <div class="education">
+            <div class="hard-skills">
+                <h3><label>Hard Skills</label></h3>
+                <ul class="bars">
+                    <li class="bar">
+                        <div class="info">
+                            <span>Graphic Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line graphic"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Database Management</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line database"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Foreign Languages</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="line foreign"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Video Editing</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="line video"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Machine Operation</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line machine"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="soft-skills">
+                <h3><label>Soft Skills</label></h3>
+                <ul class="bars">
+                    <li class="bar">
+                        <div class="info">
+                            <span>Adaptability</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="line adaptability"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Communication Skills</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line communication"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Optimism</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line optimism"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Leadership</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="line leadership"></div>
+                    </li>
+                    <li class="bar">
+                        <div class="info">
+                            <span>Time Management</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line time"></div>
+                    </li>
+                </ul>
+                <!-- <div class="objects">
+                    <ul class="box">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section class="hobbies section" id="hobbies">
+        <div class="container flex-center">
+            <h1 class="section-titl1">Hobbies</h1>
+            <h2 class="section-titl2">Hobbies</h2>
+            <div class="content">
+                <div class="hobbies-list">
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Video Editing</h3>
+                                <span>Adobe Premiere Pro</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/video.png" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Video Editing</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/video.png" alt="">
+                                <p>I take a concept, imagine a variety of possible outcomes, and then input those into a
+                                    software that enables me to alter time and space. I can build the inconceivable
+                                    there by adding audio, effects, and visuals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Photo Editing</h3>
+                                <span>Adobe Photoshop</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/photo.png" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Photo Editing</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/photo.png" alt="">
+                                <p>I actually love photo editing to express my artistic side. Even if it often takes me
+                                    a day to feel pleased with my work, I still manage to embrace what I'm doing. I love
+                                    to spend time on the computer in Photoshop, working on creating the image I
+                                    visualize based on a concept I'm thinking about.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Playing</h3>
+                                <span>Online Games</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/online%20games.png" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Playing</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/online%20games.png"
+                                    alt="">
+                                <p>I usually don't use the term hobby, but I play quite often. Gaming is my way to
+                                    relax. I spend my free time playing games online with my friends and it's the way I
+                                    connect with my friends. Playing video games helps me to unwind and have a good
+                                    time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Sports</h3>
+                                <span>Volleyball</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/volleyball.jpg" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Sports</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/volleyball.jpg" alt="">
+                                <p>I have many hobbies to make my spare time productive and fruitful, and my favorite
+                                    one is playing volleyball! It has been such a great game for me as it has helped me
+                                    grow competitively and is great fun as well.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Travelling</h3>
+                                <span>Motorcycle Ride</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/travelling.jpg" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Travelling</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/travelling.jpg" alt="">
+                                <p>Traveling is one of my hobbies. I enjoy all modes of transportation, including
+                                    driving and walking. I love to travel without a group and without a guide, despite
+                                    the fact that I often find myself in a difficult situation in unfamiliar places.
+                                    Usually, I travel with my loved ones or with my friends.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-card-container">
+                        <div class="img-card">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <h3>Non-Academic Activity</h3>
+                                <span>Dancing</span>
+                            </div>
+                            <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/dancing.jpg" alt="">
+                        </div>
+                        <div class="hobbies-model flex-center">
+                            <div class="hobbies-model-body">
+                                <i class="fas fa-times hobbies-close-btn"></i>
+                                <h3>Non-Academic Activity</h3>
+                                <img src="https://raw.githubusercontent.com/llnmntbln/pics/main/dancing.jpg" alt="">
+                                <p>Dancing is my hobby and it has been so since I was a little boy. Dancing is a great
+                                    art. It is one of the wonderful ways to express your emotions, feelings and
+                                    expressions. It is the best way to stay physically and mentally healthy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-distributed" id="footer">
+        <div class="footer-left">
+            <h3>Montablan<span> Allen</span></h3>
+            <p class="footer-company-name">Bachelor of Science in Information Technology 3-1</p>
+            <p class="footer-links">
+                <a href="#home" class="link-1">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#hobbies">Hobbies</a>
+            </p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Block 16 Lot 21 Imperial Homes Subdivision</span> San Vicente Sto.Tomas, Batangas</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+63 9984095015</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p>montablanallen@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Web Development - Midterm</span>
+                Greetings! Feel free to get in touch with me and share your thoughts about my website. Thank you, and
+                have a wonderful day!
+            </p>
+            <div class="footer-icons">
+
+                <a href="https://www.facebook.com/allen.montablan.1" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/llnmntbln" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/llnmntbln/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/llnmntbln" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>
+    const hobbiesModals = document.querySelectorAll(".hobbies-model");
+    const imgCards = document.querySelectorAll(".img-card");
+    const hobbiesCloseBtns = document.querySelectorAll(".hobbies-close-btn");
+
+    var hobbiesModal = function (modalClick) {
+        hobbiesModals[modalClick].classList.add("active");
+    }
+
+    imgCards.forEach((imgCard, i) => {
+        imgCard.addEventListener("click", () => {
+            hobbiesModal(i);
+        });
+    });
+
+    hobbiesCloseBtns.forEach((hobbiesCloseBtn) => {
+        hobbiesCloseBtn.addEventListener("click", () => {
+            hobbiesModals.forEach((hobbiesModalView) => {
+                hobbiesModalView.classList.remove("active");
+            });
+        });
+    });
+
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+    let header = document.querySelector("header");
+    window.onscroll = () => {
+
+        let pos = document.documentElement.scrollTop;
+        if (pos > 0) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        };
+    };
+
+    const scrollTopBtn = document.querySelector(".scrollToTop-btn");
+
+    window.addEventListener("scroll", function () {
+        scrollTopBtn.classList.toggle("active", window.scrollY > 500);
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+
+    const themeBtn = document.querySelector(".theme-btn");
+
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+        themeBtn.classList.toggle("sun");
+
+        localStorage.setItem("saved-theme", getCurrentTheme());
+        localStorage.setItem("saved-icon", getCurrentIcon());
+    });
+
+    const getCurrentTheme = () => document.body.classList.contains("dark-theme") ? "dark" : "light";
+    const getCurrentIcon = () => themeBtn.classList.contains("sun") ? "sun" : "moon";
+
+    const savedTheme = localStorage.getItem("saved-theme");
+    const savedIcon = localStorage.getItem("saved-icon");
+
+    if (savedTheme) {
+        document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme");
+        themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun");
+    }
+
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+
+    const menuBtn = document.querySelector(".nav-menu-btn");
+    const closeBtn = document.querySelector(".nav-close-btn");
+    const navigation = document.querySelector(".navigation");
+    const navItems = document.querySelectorAll(".nav-items a");
+
+    menuBtn.addEventListener("click", () => {
+        navigation.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        navigation.classList.remove("active");
+    });
+
+    navItems.forEach((navItem) => {
+        navItem.addEventListener("click", () => {
+            navigation.classList.remove("active");
+        });
+    });
+
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 2500,
+        delay: 100
+    });
+
+    ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02, .section-title1, .section-titl1, .section-title_1, .section-titl2, .section-title_2, .section-title2', { delay: 400, origin: 'bottom' });
+    ScrollReveal().reveal('.home .info h3, .home .info p, .about-info .btn', { delay: 500, origin: 'bottom' });
+    ScrollReveal().reveal('.home .info .btn', { delay: 600, origin: 'bottom' });
+    ScrollReveal().reveal('.media-icons i', { delay: 600, origin: 'bottom' });
+    ScrollReveal().reveal('.home-img, about-img', { delay: 400, origin: 'top' });
+    ScrollReveal().reveal('.about .description', { delay: 400, origin: 'bottom' });
+    ScrollReveal().reveal('.skills-description', { delay: 400, origin: 'top', interval: 200 });
+    ScrollReveal().reveal('.education, .portfolio img-card', { delay: 400, origin: 'bottom', interval: 200 });
+    ScrollReveal().reveal('footer .group', { delay: 400, origin: 'top', interval: 200 });
+
+</script>
+
+</html>
